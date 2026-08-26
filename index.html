@@ -13,6 +13,16 @@
     <title>Document</title>
 </head>
 <body>
+    <button onclick="window.mainMenu.showModal()">Click me</button>
+
+    <dialog id="mainMenu">
+        <h1 style="text-align: center; height: 15%;">Title</h1>
+        <div id="innerMenu">
+            <span>Option 1</span>
+            <span>Option 2</span>
+            <button onclick="window.mainMenu.close()">Exit</button>
+        </div>
+    </dialog>
     <script src="https://code.jquery.com/jquery-4.0.0.js" integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U=" crossorigin="anonymous"></script>
 </body>
 </html>
