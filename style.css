@@ -7,6 +7,15 @@ body {
     margin: 0;
     width: 100vw;
     height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+
+    background-color: #28282B;
+    color: white;
 }
 
 dialog::backdrop {
@@ -30,6 +39,10 @@ dialog:not([open]) {
 dialog {
     width: 800px;
     height: 600px;
+    background-color: #28282B;
+    color: white;
+    border: 4px solid black;
+    border-radius: 8px;
     transition: transform 0.3s ease, display 0.3s ease allow-discrete;
     transform: translateX(0);
 }
@@ -44,11 +57,73 @@ dialog:not([open]) {
     transform: translateX(-100vw);
 }
 
+#menuContainer {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
 #innerMenu {
-    height: 75%;
+    height: 85%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 20px;
+}
+
+h1 {
+    margin: 20px 0 0 0;
+    height: 15%;
+    text-align: center;
+    font-size: 1.2cm;
+}
+
+.menuOption {
+    position: relative;
+    padding: 8px 14px 8px 14px;
+    width: 50%;
+    /* border-left: 4px solid #1434A4; */
+    border-radius: 4px;
+    text-align: center;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.menuOption::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgb(0,242,254,0.6), rgb(0,242,254,0));
+    transition: left 0.2s ease-in;
+}
+
+.menuOption:hover::before {
+    left: 0;
+}
+
+.wordContainer {
+    width: 600px;
+    height: 100px;
+
+    background-color: aqua;
+}
+
+.letters {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.row {
+    width: 600px;
+    height: 120px;
+
+    display: flex;
+    gap: 5px;
+
+    background-color: aqua;
 }
